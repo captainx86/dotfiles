@@ -81,6 +81,13 @@ local plugins = {
     config = function ()
       vim.cmd("let g:tagbar_ctags_bin = 'C:\\Users\\Eric.Nelson\\ctags-p6.0.20230723.0-x64\\ctags.exe'")
     end
+  },
+  {
+    "ThePrimeagen/harpoon",
+    lazy = false,
+    config = function ()
+      require("telescope").load_extension("harpoon")
+    end,
   }
 }
 

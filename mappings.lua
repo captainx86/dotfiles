@@ -1,5 +1,11 @@
 local M = {}
 
+M.disabled = {
+  n = {
+    ["<leader>h"] = "",
+  }
+}
+
 M.tab_navigation = {
   n = {
     ["<C-Tab"] = {":tabnext", "Next tab"},
@@ -29,6 +35,8 @@ M.general = {
     ["<leader>tb"] = {":TagbarToggle<CR>", "Toggle TagBar"},
     ["<leader>cd"] = {":cd %:p:h<CR>", "Change Directory To Current File"},
     ["<leader>ow"] = {":!\"C:\\Users\\Eric.Nelson\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\" -r -g \"%:p\":<C-r>=line(\".\")<CR>:<C-r>=col(\".\")<CR> \"%:p:h\"<CR><CR>"},
+    ["<leader>hf"] = {":lua require('harpoon.mark').add_file()<CR>", "Mark file with harpoon"},
+    ["<leader>hm"] = {":lua require('harpoon.ui').toggle_quick_menu()<CR>", "Toggle harpoon menu"}
   },
   t = {
     ["kj"] = {"<Esc>", "Exit term mode"},
