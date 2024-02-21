@@ -9,7 +9,10 @@ M.ui = {
   statusline = {
     theme = "vscode",
     separator_style = "default",
-  }
+  },
+  tabufline = {
+    enabled = false,
+  },
 }
 M.mappings = require "custom.mappings"
 M.plugins = "custom.plugins"

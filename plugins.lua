@@ -20,8 +20,8 @@ local plugins = {
         "lua_language_server",
         "pyright",
         "pylint",
-        "autopep8"
-
+        "autopep8",
+        "typescript-language-server",
       },
     config = function(_, opts)
       require("mason").setup(opts)
@@ -87,7 +87,37 @@ local plugins = {
     lazy = false,
     config = function ()
       require("telescope").load_extension("harpoon")
+      require("harpoon").setup({
+        tabline = false
+      })
     end,
+  },
+  {
+    "ThePrimeagen/vim-be-good"
+  },
+  {
+    "L3MON4D3/LuaSnip",
+    config = function()
+      require('custom.snippets.customsnippets')
+    end
+  },
+  {
+    'glacambre/firenvim',
+    lazy = false,
+    build = function()
+        vim.fn["firenvim#install"](0)
+    end
+  },
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreview", "MarkdownPreviewToggle" },
+    build = function ()
+      vim.fn["mkdp#util#install"]()
+    end
+  },
+  {
+    "mbbill/undotree",
+    cmd = "UndotreeToggle",
   }
 }
 
